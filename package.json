@@ -1,0 +1,19 @@
+{
+  "name": "echo-shift",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ECHO//SHIFT - a temporal puzzle game where your past selves are part of the solution.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4180",
+    "test": "node tests/headless.js",
+    "test:browser": "node tests/browser-qa.js",
+    "verify": "node tests/headless.js && vite build"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0",
+    "vite": "^7.1.5"
+  }
+}

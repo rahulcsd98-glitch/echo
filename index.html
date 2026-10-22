@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#05070b" />
+    <meta
+      name="description"
+      content="ECHO//SHIFT — a 2D sci-fi temporal puzzle game. Your past selves are part of the solution."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2305070b'/%3E%3Cpath d='M9 8h11l-7 16H6z' fill='%2338e1ff'/%3E%3Cpath d='M17 8h6l-7 16h-6z' fill='%237a5cff'/%3E%3C/svg%3E"
+    />
+    <title>ECHO//SHIFT — your past is still playing</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #05070b;
+        overflow: hidden;
+        overscroll-behavior: none;
+        font-family: Consolas, 'DejaVu Sans Mono', 'SFMono-Regular', monospace;
+      }
+      body {
+        touch-action: none;
+      }
+      #game {
+        display: block;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        cursor: crosshair;
+        background: #05070b;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        background: #05070b;
+        color: #9fe9ff;
+        font-size: 13px;
+        letter-spacing: 0.6em;
+        text-indent: 0.6em;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 10;
+      }
+      #boot .t {
+        font-size: 30px;
+        letter-spacing: 0.4em;
+        text-indent: 0.4em;
+        color: #eafcff;
+        text-shadow: 0 0 24px rgba(111, 232, 255, 0.55);
+      }
+      #boot .s {
+        font-size: 10px;
+        opacity: 0.7;
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+      #boot.off {
+        opacity: 0;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.25;
+        }
+        50% {
+          opacity: 0.85;
+        }
+      }
+      noscript {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff5a4d;
+        letter-spacing: 0.3em;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" aria-label="ECHO//SHIFT game canvas"></canvas>
+    <div id="boot">
+      <div class="t">ECHO//SHIFT</div>
+      <div class="s">CALIBRATING TIMELINE</div>
+    </div>
+    <noscript>ECHO//SHIFT REQUIRES JAVASCRIPT</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
